@@ -1,5 +1,6 @@
 [versions]
 agp = "8.3.1"
+cardviewV7 = "28.0.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -12,6 +13,7 @@ firebaseAuth = "22.3.1"
 firebaseDatabase = "20.3.1"
 
 [libraries]
+cardview-v7 = { module = "com.android.support:cardview-v7", version.ref = "cardviewV7" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

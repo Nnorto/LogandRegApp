@@ -22,6 +22,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -42,11 +43,14 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
     //noinspection UseTomlInstead
-    implementation('com.rengwuxian.materialedittext:library:2.1.4')
-    implementation('com.android.support:cardview-v7:28.0.0')
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
-    implementation("com.google.firebase:firebase-auth:22.3.1")
-    implementation('com.google.firebase:firebase-database:20.3.1')
-    implementation("com.google.firebase:firebase-analytics")
-    implementation('com.android.support:design:28.0.0')
+
+    implementation platform('com.google.firebase:firebase-bom:32.8.1')
+
+
+    //noinspection UseTomlInstead
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.android.material:material:1.4.0' // Adjust version number if needed
+
+
+
 }

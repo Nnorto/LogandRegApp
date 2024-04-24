@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">LogandRegApp</string>
-    <string name="app_in_name">Прога</string>
-    <string name="app_in_name_reglog">Регистрация и вход</string>
-    <string name="text_btn">Войти в учетную запись 😌</string>
-    <string name="text_btnsigin">Войти</string>
-    <string name="text_btnreg">Регистрация</string>
-    <string name="email">Email</string>
+    <string name="app_name" translatable="false">LogandRegApp</string>
+    <string name="app_in_name" translatable="false">Прога</string>
+    <string name="app_in_name_reglog" translatable="false">Регистрация и вход</string>
+    <string name="text_btn" translatable="false">Войти в учетную запись 😌</string>
+    <string name="text_btnsigin" translatable="false">Войти</string>
+    <string name="text_btnreg" translatable="false">Регистрация</string>
+    <string name="email" translatable="false">Email</string>
 
 </resources>
