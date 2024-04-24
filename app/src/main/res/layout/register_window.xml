@@ -18,7 +18,7 @@
             android:inputType="textEmailAddress"
             android:text=""
             android:textColor="#1F022856"
-            android:textColorHint="#1F022856"
+            android:textColorHint="#000619"
             android:textSize="20sp"/>
 
         <EditText
@@ -29,7 +29,7 @@
             android:inputType="textPassword"
             android:text=""
             android:textColor="#1F022856"
-            android:textColorHint="#1F022856"
+            android:textColorHint="#000619"
             android:textSize="20sp"/>
 
         <EditText
@@ -40,7 +40,7 @@
             android:inputType="text"
             android:text=""
             android:textColor="#1F022856"
-            android:textColorHint="#1F022856"
+            android:textColorHint="#000619"
             android:textSize="20sp"/>
 
         <EditText
@@ -51,7 +51,7 @@
             android:inputType="phone"
             android:text=""
             android:textColor="#1F022856"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#000619"
             android:textSize="20sp"/>
 
     </LinearLayout>
