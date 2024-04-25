@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void showSiginWindow(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Войти");
-        dialog.setMessage("Пожалуйста, заполните данные для входа");
+        dialog.setTitle("Войти.");
+        dialog.setMessage("Пожалуйста, заполните данные для входа.");
         LayoutInflater inflater = LayoutInflater.from(this);
         View sig_in_w = inflater.inflate(R.layout.sigin_window, null);
         dialog.setView(sig_in_w);
@@ -70,24 +70,24 @@ public class MainActivity extends AppCompatActivity {
         final EditText password = sig_in_w.findViewById(R.id.passf);
 
 
-        dialog.setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton("Отменить.", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 dialogInterface.dismiss();
             }
         });
-        dialog.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Войти.", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
 
                 if (TextUtils.isEmpty(email.getText().toString())) {
-                    Snackbar.make(root, "Введите почту", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите почту.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
 
                 if (password.getText().toString().length() < 8) {
-                    Snackbar.make(root, "Введите пароль", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите пароль.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -114,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showRegisterWindow() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Зарегистрироваться");
-        dialog.setMessage("Пожалуйста, заполните данные");
+        dialog.setTitle("Зарегистрироваться.");
+        dialog.setMessage("Пожалуйста, заполните данные.");
         LayoutInflater inflater = LayoutInflater.from(this);
         View reg_w = inflater.inflate(R.layout.register_window, null);
         dialog.setView(reg_w);
@@ -124,34 +124,34 @@ public class MainActivity extends AppCompatActivity {
         final EditText name = reg_w.findViewById(R.id.name);
         final EditText phone = reg_w.findViewById(R.id.phonef);
 
-        dialog.setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton("Отменить.", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 dialogInterface.dismiss();
             }
         });
-        dialog.setPositiveButton("Добавить", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Добавить.", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
 
                 if (TextUtils.isEmpty(email.getText().toString())) {
-                    Snackbar.make(root, "Введите почту", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите почту.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(name.getText().toString())) {
-                    Snackbar.make(root, "Введите имя", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите имя.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(phone.getText().toString())) {
-                    Snackbar.make(root, "Введите телефон", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите телефон.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
 
                 if (password.getText().toString().length() < 8) {
-                    Snackbar.make(root, "Введите пароль", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(root, "Введите пароль.", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
 
