@@ -1,7 +1,10 @@
 package com.example.logandregapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.text.TextUtils;
@@ -12,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +52,64 @@ public class MainActivity extends AppCompatActivity {
                 showRegisterWindow();
             }
         });
+        btnsigin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSiginWindow();
+            }
+        });
+    }
+    private void showSiginWindow(){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Войти");
+        dialog.setMessage("Пожалуйста, заполните данные для входа");
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View sig_in_w = inflater.inflate(R.layout.sigin_window, null);
+        dialog.setView(sig_in_w);
+        final EditText email = sig_in_w.findViewById(R.id.email);
+        final EditText password = sig_in_w.findViewById(R.id.passf);
+
+
+        dialog.setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+        dialog.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+
+                if (TextUtils.isEmpty(email.getText().toString())) {
+                    Snackbar.make(root, "Введите почту", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                if (password.getText().toString().length() < 8) {
+                    Snackbar.make(root, "Введите пароль", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+
+            auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            startActivity(new Intent(MainActivity.this, MapActivity.class));
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Snackbar.make(root, "Ошибка авторизации."+e.getMessage(), Snackbar.LENGTH_SHORT).show();
+                        }
+                    });
+
+            }
+        });
+
+        dialog.show();
+
     }
 
     private void showRegisterWindow() {
@@ -102,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                                 Userr.setName(name.getText().toString());
                                 Userr.setPass(password.getText().toString());
                                 Userr.setPhone(phone.getText().toString());
-                                user.child(Userr.getEmail()).setValue(Userr)
+                                user.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(Userr)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
