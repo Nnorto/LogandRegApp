@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference user;
-
     RelativeLayout root;
 
     @Override
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    // вход
     private void showSiginWindow(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Войти.");
@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // регистрация
     private void showRegisterWindow() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Зарегистрироваться.");

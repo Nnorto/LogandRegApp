@@ -22,7 +22,7 @@ class MapActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting("ВХОД!")
                 }
             }
         }
@@ -32,7 +32,7 @@ class MapActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "УСПЕШНЫЙ $name!",
         modifier = modifier
     )
 }
