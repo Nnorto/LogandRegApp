@@ -116,6 +116,7 @@ fun WeatherScreen(weatherRepository: WeatherRepository) {
 }
 // 12345678a
 // test@gmail.com
+// для входа
 @Preview(showBackground = true)
 @Composable
 fun WeatherScreenPreview() {
